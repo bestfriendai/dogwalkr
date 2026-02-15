@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "DogWalkr",
+    "slug": "dogwalkr",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "dogwalkr",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#30D158"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dogwalkr.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#30D158"
+      },
+      "package": "com.dogwalkr.app"
+    },
+    "web": { "favicon": "./assets/favicon.png", "bundler": "metro" },
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true }
+  }
+}
