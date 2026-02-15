@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
-import { useDogWalkrStore } from '../../src/hooks/useDogWalkr';
-import { OFFERINGS, purchaseSubscription, restorePurchases } from '../../src/services/purchases';
-import { colors, spacing, borderRadius, fontSize, fontWeight } from '../../src/ui/theme';
+import { useDogWalkrStore } from '../src/hooks/useDogWalkr';
+import { colors, spacing, borderRadius, fontSize, fontWeight } from '../src/ui/theme';
+import { OFFERINGS, Offering, purchaseSubscription, restorePurchases } from '../src/services/purchases';
 
 export default function PaywallScreen() {
   const router = useRouter();
@@ -43,7 +43,7 @@ export default function PaywallScreen() {
         <View style={styles.feature}><Text style={styles.featureIcon}>🏆</Text><Text style={styles.featureTitle}>Goals & Streaks</Text><Text style={styles.featureText}>Stay motivated</Text></View>
       </View>
       <View style={styles.plans}>
-        {OFFERINGS.map((o) => (
+        {OFFERINGS.map((o: Offering) => (
           <TouchableOpacity key={o.id} style={[styles.planCard, selectedPlan === o.id && styles.planCardSelected, o.isBestValue && styles.planCardBest]} onPress={() => setSelectedPlan(o.id as any)}>
             {o.isBestValue && <View style={styles.bestBadge}><Text style={styles.bestText}>BEST</Text></View>}
             <Text style={styles.planName}>{o.id === 'monthly' ? 'Monthly' : 'Annual'}</Text>
